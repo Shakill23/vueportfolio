@@ -2,7 +2,7 @@
     <footer class="container-fluid">
         <div class="row">
             <p class="lead">
-                Joel's portfolio &copy; <span class="shadow">{{ cYear }}</span>
+                Shakeel's portfolio &copy; <span class="shadow">{{ cYear }}</span>
             </p>
         </div>
     </footer>
