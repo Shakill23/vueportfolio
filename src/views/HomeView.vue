@@ -15,7 +15,7 @@
     <section class="row" id="testimonials">
 
     </section>
-    <section class="row" id="reachMe">
+    <section class="row" id="contact">
 
     </section>
   </div>
