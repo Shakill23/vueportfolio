@@ -1,22 +1,14 @@
 <template>
-    <div class="card">
-     <div class="card-header">
-        <slot name="cardHeader"></slot>
-     </div>
-      <div class="card-body">
-        <slot name="cardBody"></slot>
-      </div>
+    <div>
+        <h2>Contact</h2>
     </div>
     </template>
     
     <script>
         export default {
-            name: 'CardComp'
+            name: 'ContactComp'
         }
     </script>
     
     <style scoped>
-        .card {
-            width: 18rem;
-        }
     </style>
