@@ -1,5 +1,4 @@
-<template>
-  <footer class="container-fluid">
+<footer class="container-fluid">
       <div class="row">
           <p class="lead">
               Shakeel's portfolio &copy; <span class="shadow">{{ cYear }}</span>
