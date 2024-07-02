@@ -1,137 +1,121 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
-import Swal from 'sweetalert2/dist/sweetalert2'
-const portfolioURL = 'https://shakill23.github.io/vueEOMP/data'
+// import Swal from 'sweetalert2/dist/sweetalert2'
+// const portfolioURL = 'https://shakill23.github.io/vueEOMP/data'
 
 export default createStore({
   state: {
-    jobTitle: null,
-    about: null,
-    education: null,
-    experiences: null,
-    skills: null,
-    testimonials: null,
-    projects: null
+    //state array
+    home: "",
+    about: "",
+    resume: [],
+    skills: [],
+    projects: [],
+    testimonials: [],
+    contact: ""
+
   },
   getters: {
   },
   mutations: {
-    setJobTitle(state, value) { 
-      state.jobTitle = value
+    setHome(state , data){
+      state.home = data
     },
-    setAbout(state, value) { 
-      state.about = value
+    setAbout(state , about){
+      state.about = about
     },
-    setEducation(state, value) { 
-      state.education = value
+    setResume(state , resume){
+      state.resume = resume
     },
-    setExperience(state, value) { 
-      state.experiences = value
+    setSkills(state , skills){
+      state.skills = skills
     },
-    setSkills(state, value) { 
-      state.skills = value
+    setProjects(state , projects ){
+      state.projects = projects
     },
-    setTestimonials(state, value) { 
-      state.testimonials = value
+    setTestimonials(state , testimonials){
+      state.testimonials = testimonials
     },
-    setProjects(state, value) { 
-      state.projects = value
+    setContact(state , contact){
+      state.contact = contact
     }
   },
   actions: {
-    async fetchJobTitle(context) {
+    getHome (context){
       try {
-        let { jobTitle } = await (await axios.get(portfolioURL)).data
-        context.commit("setJobTitle", jobTitle)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch the job title",
-          icon: "error",
-          timer: 2000
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          context.commit('setHome',res.data.home)
         })
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     },
-    async fetchAbout(context) {
+    getAbout (context){
       try {
-        let { about } = await (await axios.get(portfolioURL)).data
-        context.commit("setAbout", about)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch data",
-          icon: "error",
-          timer: 2000
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          context.commit('setAbout',res.data.about)
         })
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     },
-    async fetchEducation(context) {
+    getResume (context){
       try {
-        let { education } = await (await axios.get(portfolioURL)).data
-        context.commit("setEducation", education)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch data - education",
-          icon: "error",
-          timer: 2000
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          context.commit('setResume',res.data.resume)
         })
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     },
-    async fetchExperience(context) {
+    getSkills (context){
       try {
-        let { experiences } = await (await axios.get(portfolioURL)).data
-        context.commit("setExperience", experiences)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch data - experience",
-          icon: "error",
-          timer: 2000
-        })
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          console.log(res.data.skills);
+          context.commit('setSkills',res.data.skills)
+        })      
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     },
-    async fetchSkills(context) {
+    getProjects (context){
       try {
-        let { skills } = await (await axios.get(portfolioURL)).data
-        context.commit("setSkills", skills)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch data - skills",
-          icon: "error",
-          timer: 2000
-        })
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          context.commit('setProjects',res.data.projects)
+        })    
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     },
-    async fetchTestimonials(context) {
+    getTestimonials (context){
       try {
-        let { testimonials } = await (await axios.get(portfolioURL)).data
-        context.commit("setTestimonials", testimonials)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch data - testimonials",
-          icon: "error",
-          timer: 2000
+        
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          context.commit('setTestimonials',res.data.testimonials)
         })
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     },
-    async fetchProjects(context) {
+    getContact (context){
       try {
-        let { projects } = await (await axios.get(portfolioURL)).data
-        context.commit("setProjects", projects)
-      } catch (e) { 
-        Swal.fire({
-          title: "Error",
-          text: "Failed to fetch data - projects",
-          icon: "error",
-          timer: 2000
-        })
+        axios.get('https://shakill23.github.io/vueEOMP/data')
+        .then (res => {
+          context.commit('setContact',res.data.contact)
+        })       
+      } catch (error) {
+        alert('cannot retrieve data',error)
       }
     }
   },
   modules: {
+
   }
 })
 
