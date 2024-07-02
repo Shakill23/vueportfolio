@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row vh-100 align-items-center">
             <div class="col">
-                <img src="https://shakill23.github.io/Allimages/images/sdFormal.jpg" alt="profile"
+                <img src="https://shakill23.github.io/allImages/images/sdFormal.jpg" alt="profile"
                     class="img-fluid w-75 shadow rounded-bottom-pill rounded-top-circle" loading="lazy">
             </div>
             <div class="col">
