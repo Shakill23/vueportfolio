@@ -15,6 +15,8 @@
             <h2 class="aspiring">Aspiring Developer</h2>
           </div>
 
+        </div>
+
     <div class="container">
         <div class="row vh-100 align-items-center">
             <div class="col">
@@ -28,9 +30,12 @@
                         <h2 id="shakeel" class="aspiring">Aspiring Developer</h2>
                     </div>
                 </div>
+                </div>
             </div>
 
+
         </div>
+        
       </section>
     </main>
   </template>
