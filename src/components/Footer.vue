@@ -1,19 +1,34 @@
 <template>
-    <footer class="container-fluid">
-        <div class="row">
-            <p class="lead">
-                Shakeel's portfolio &copy; <span class="shadow">{{ cYear }}</span>
-            </p>
+    <footer class="container-fluid text-center sticky-sm-bottom">
+      <div class="row">
+        <div class="col">
+          <p>
+            <span class="shadow">Shakeel's Portfolio</span>
+            <span>&copy; {{ cYear }}</span>
+          </p>
         </div>
+      </div>
     </footer>
-</template>
-<script>
-    export default {
+  </template>
+  
+  <script>
+  export default {
     name: "FooterComp",
-    data() { 
-        return {
-            cYear: new Date().getUTCFullYear()
-        }
+    data() {
+      return {
+        cYear: new Date().getUTCFullYear(),
+      };
     },
-    }
-</script>
+  };
+  </script>
+  
+  <style scoped>
+  
+  .footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px 0;
+  }
+
+  </style>
+  
