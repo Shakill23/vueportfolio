@@ -26,6 +26,7 @@
         </div>
       </div>
     </div>
+
   </section>
 
   <section id="skills" class="container">
@@ -203,5 +204,10 @@ h2, h3 {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 </style>
+
+
+
+
+ 
 
 
