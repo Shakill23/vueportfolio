@@ -122,94 +122,6 @@ img[alt="logo"] {
     object-position: center;
 }
 
-/* Contact */
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-}
-
-.title {
-    font-size: 24px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.group {
-    position: relative;
-}
-
-.form .group label {
-    font-size: 14px;
-    color: rgb(99, 102, 102);
-    position: absolute;
-    top: -10px;
-    left: 10px;
-    background-color: #fff;
-    transition: all .3s ease;
-}
-
-.form .group input,
-.form .group textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    outline: 0;
-    width: 100%;
-    background-color: transparent;
-}
-
-.form .group input:placeholder-shown+label,
-.form .group textarea:placeholder-shown+label {
-    top: 10px;
-    background-color: transparent;
-}
-
-.form .group input:focus,
-.form .group textarea:focus {
-    border-color: #3366cc;
-}
-
-.form .group input:focus+label,
-.form .group textarea:focus+label {
-    top: -10px;
-    left: 10px;
-    background-color: #fff;
-    color: #3366cc;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.form .group textarea {
-    resize: none;
-    height: 100px;
-}
-
-.form button {
-    background-color: #3366cc;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.form button:hover {
-    background-color: #27408b;
-}
-
 /* grid layout */
 :is(body) {
     display: grid;
@@ -271,17 +183,8 @@ a:hover {
     border-color: #0056b3;
 }
 
-/* contact */
-#contact {
-    width: 35rem;
-    border-radius: 1rem;
-    background-color: rgb(146, 146, 146);
-    padding: 20px;
-    margin-bottom: 2rem;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-}
-
 /* flip card */
+
 #liHead {
     font-family: 'Work Sans', sans-serif;
     background-color: #999898;
@@ -363,177 +266,316 @@ a:hover {
 
 .quote p {
     font-family: 'Work Sans', sans-serif;
-    font-size: 2rem;
-    color: #333;
-    text-shadow: .25px .25px 2px rgba(255, 255, 255, 0.704);
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-.card-container.about-me {
-    perspective: 1000px;
-}
-
-.card.about-me {
-    position: relative;
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-}
-
-.card-container.about-me:hover .card.about-me {
-    transform: rotateY(180deg);
-}
-
-.card.about-me .card-face {
-    position: absolute;
-    width: 100%;
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
     height: 100%;
-    backface-visibility: hidden;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.card.about-me .front {
-    background-color: #ffffff;
-    color: black;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 25px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin-top: 0;
 }
 
-.card.about-me .back {
-    background-color: #ffffff;
-    transform: rotateY(180deg);
-}
-
-.card.about-me .back ul {
-    list-style: none;
-    padding: 0;
-}
-
-.card.about-me .back ul li {
-    font-family: 'Work Sans', sans-serif;
-    margin-bottom: 6px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: bold;
-    color: black;
-    background-color: #ededed;
-    border-radius: .2rem;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* Tooltip */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
+.carousel-control-prev-icon:before,
+.carousel-control-next-icon:before {
+    content: '';
     position: absolute;
-    z-index: 1;
-    bottom: 125%;
+    top: 50%;
     left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
+    transform: translate(-50%, -50%);
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+.carousel-control-prev-icon:before {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid white;
+}
+
+.carousel-control-next-icon:before {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid white;
+}
+
+.carousel-indicators {
+    bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-indicators button {
+    width: 20px;
+    height: 3px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0;
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+
+.carousel-indicators button.active {
     opacity: 1;
 }
 
-#nottingham {
-    background-color: rgb(255, 255, 255);
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
 }
 
-.header img {
-    max-width: 100%;
-    display: block;
+/* Hover Effects */
+.move-on-hover {
+    transition: transform 0.3s ease;
 }
 
-.header img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    object-position: center;
+.move-on-hover:hover {
+    transform: translateX(-5px);
 }
 
-.header #title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+.move-on-hover2 {
+    transition: transform 0.3s ease;
 }
 
-.header #title {
-    color: #333;
-    text-shadow: .25px .25px 2px rgba(255, 255, 255, 0.704);
+.move-on-hover2:hover {
+    transform: translateX(5px);
+}
+
+.move-on-hover3 {
+    transition: transform 0.3s ease;
+}
+
+.move-on-hover3:hover {
+    transform: translateY(5px);
+}
+
+.move-on-hover4 {
+    transition: transform 0.3s ease;
+}
+
+.move-on-hover4:hover {
+    transform: translateY(-5px);
+}
+
+.zoom-in-hover {
+    transition: transform 0.25s ease;
+}
+
+.zoom-in-hover:hover {
+    transform: scale(1.03);
+}
+
+.zoom-out-hover {
+    transition: transform 0.25s ease;
+}
+
+.zoom-out-hover:hover {
+    transform: scale(.97);
+}
+
+/* Text Animation */
+.cool-text {
+    font-size: 48px;
     font-weight: bold;
-    letter-spacing: 1px;
+    color: #00f;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
 }
 
-#projects {
-    padding: 10px;
+.cool-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff9e;
+    overflow: hidden;
+    animation: glow-animation 1.87s ease-in-out infinite alternate;
 }
 
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 10px rgb(0, 0, 0);
+    }
 
-.solo {
-    max-width: 35rem;
-    border-radius: 1rem;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    margin-bottom: 2rem;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    100% {
+        text-shadow: 0 0 10px rgb(255, 255, 255);
+    }
 }
 
-/* CSS for the footer */
-.foot {
-    background-color: #c2c2c2;
-    padding: 20px;
-    text-align: center;
-    font-family: 'Work Sans', sans-serif;
+/* Card1 */
+.card1 {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Adjusted Footer Text for Shakeel's Page */
-.foot p {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 1rem;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: #2d2d2d;
-    background-color: #f5f5f5;
-    padding: 5px;
-    border: 1px solid #2d2d2d;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+.card1 svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.foot a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+.card1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
-
- 
-
-.foot a:hover {
-    text-decoration: underline;
-    color: #000000;
+.card1__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.card1:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card1__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card1:hover svg {
+    scale: 0;
+}
+
+.card1__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* Animated Background */
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(16, 2, 2) 0%, rgb(90, 8, 8) 35%, rgb(255, 0, 0));
+}
+
+.box div {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 6px solid rgb(255, 255, 255);
+    z-index: 1;
+}
+
+.box div:nth-child(1) {
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(2) {
+    top: 70%;
+    left: 50%;
+    animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(3) {
+    top: 17%;
+    left: 6%;
+    animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(4) {
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(5) {
+    top: 67%;
+    left: 10%;
+    animation: animate 6s linear infinite;
+}
+
+.box div:nth-child(6) {
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
+}
+
+.box div:nth-child(7) {
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+}
+
+.box div:nth-child(8) {
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+}
+
+.box div:nth-child(9) {
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(10) {
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+    }
+}  
