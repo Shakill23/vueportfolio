@@ -1,4 +1,5 @@
 <template>
+
     <section id="projects" class="container">
       <div class="row justify-content-center">
         <h2>Projects</h2>
@@ -54,14 +55,7 @@
   </template>
   
   <script>
-export default {
-  name: 'ContactComp',
-  methods: {
-    clearForm() {
-      this.$refs.formRef.reset();
-    }
-  }
-}
+
 </script>
 <style scoped>
 *,
@@ -253,3 +247,5 @@ a {
 }
 </style>
   
+
+
