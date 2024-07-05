@@ -1,6 +1,19 @@
 <template>
+  <div class="wrapper container-fluid">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
   <div class="container">
-  <section class="row" id="home">
+  <section class="row" id="landing">
       <LandingSection/>
   </section>
   <section class="row" id="about"><AboutSection/></section>
@@ -8,6 +21,7 @@
   <section class="row" id="project"><ProjectSection/></section>
   <section class="row" id="testimonials"><TestimonialSection/></section>
   <section class="row" id="contact"><ContactSection/></section>
+  </div>
   </div>
 </template>
 <script>
