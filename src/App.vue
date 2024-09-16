@@ -31,9 +31,6 @@ computed:{
     getProjects(){
       return this.$store.dispatch("getProjects")
     },
-    getTestimonials(){
-      return this.$store.dispatch("getTestimonials")
-    },
     getContact(){
       return this.$store.dispatch("getContact")
     }
@@ -44,7 +41,6 @@ mounted(){
   this.getResume
   this.getSkills
   this.getProjects
-  this.getTestimonials
   this.getContact
 }
 } 

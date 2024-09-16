@@ -29,14 +29,13 @@ import LandingSection from '@/components/LandingSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import ResumeSection from '@/components/ResumeSection.vue'
 import ProjectSection from '@/components/ProjectSection.vue'
-import TestimonialSection from '@/components/TestimonialSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 
 
 export default {
   name: 'HomeView',
   components: {
-    LandingSection, AboutSection, ResumeSection, ProjectSection, TestimonialSection, ContactSection
+    LandingSection, AboutSection, ResumeSection, ProjectSection, ContactSection
   }
 }
 </script>

@@ -41,13 +41,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">
-                            <i class="bi bi-yelp">
-                                Testimonials
-                            </i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#contact">
                             <i class="bi bi-person-lines-fill">
                                 Contact

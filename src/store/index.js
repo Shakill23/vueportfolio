@@ -10,7 +10,6 @@ export default createStore({
     resume: [],
     skills: [],
     projects: [],
-    testimonials: [],
     contact: ""
 
   },
@@ -31,9 +30,6 @@ export default createStore({
     },
     setProjects(state , projects ){
       state.projects = projects
-    },
-    setTestimonials(state , testimonials){
-      state.testimonials = testimonials
     },
     setContact(state , contact){
       state.contact = contact
@@ -87,17 +83,6 @@ export default createStore({
         .then (res => {
           context.commit('setProjects',res.data.projects)
         })    
-      } catch (error) {
-        alert('cannot retrieve data',error)
-      }
-    },
-    getTestimonials (context){
-      try {
-        
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          context.commit('setTestimonials',res.data.testimonials)
-        })
       } catch (error) {
         alert('cannot retrieve data',error)
       }
