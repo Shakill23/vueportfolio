@@ -31,6 +31,9 @@
   
   <style scoped>
 
+#home{
+  padding-top: 8%;
+}
 
   
     .cool-text {

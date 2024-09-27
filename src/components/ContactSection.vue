@@ -1,23 +1,4 @@
-<template>
-
-    <section id="projects" class="container">
-      <div class="row justify-content-center">
-        <h2>Projects</h2>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-4 mb-4" v-for="project in $store.state.projects" :key="project">
-          <div class="card">
-            <img :src="project.image" class="card-img-top" alt="project image">
-            <div class="card-body">
-              <h5 class="card-title">{{project.name}}</h5>
-              <p class="card-text">{{project.description}}</p>
-              <a :href="project.github" class="btn btn-primary btn-sm">Github</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
+<template>  <div id="contactBg">
     <div class="row justify-content-center">
       <div class="card contact-card">
         <span class="title">Leave a Comment</span>
@@ -52,29 +33,13 @@
         </div>
       </div>
     </div>
+  </div>
   </template>
   
   <script>
 
 </script>
 <style scoped>
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  color: #212529;
-}
-
 h1,
 h2,
 h3,
@@ -100,6 +65,10 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+}
+
+#contactBg{
+  background: rgb(224, 209, 209);
 }
 
 .card {

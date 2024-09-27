@@ -1,5 +1,6 @@
 <template>
-    <section id="about" class="container">
+  <section id="about" class="container-fluid">
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 col-md-10 col-sm-12 col-12">
           <h2>About</h2>
@@ -11,9 +12,9 @@
           </div>
         </div>
       </div>
-    </section>
-  </template>
-  
+    </div>
+  </section>
+</template>
 
 <style scoped>
 *,
@@ -33,8 +34,10 @@ body {
   text-align: center;
 }
 
-#about {
-  padding: 50px 0;
+section, #about, .container-fluid {
+  padding: 0;
+  background: rgb(224, 209, 209);
+  width: 100%;
 }
 
 h2 {
@@ -43,9 +46,11 @@ h2 {
 
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   padding: 20px;
+  max-width: 1200px; /* Add a max-width to control container width */
 }
 
 .row {
@@ -83,5 +88,4 @@ p {
     gap: 10px;
   }
 }
-
 </style>

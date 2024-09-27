@@ -1,7 +1,5 @@
-import { createStore } from 'vuex'
-import axios from 'axios'
-// import Swal from 'sweetalert2/dist/sweetalert2'
-// const portfolioURL = 'https://shakill23.github.io/vueEOMP/data'
+import { createStore } from 'vuex';
+import axios from 'axios';
 
 export default createStore({
   state: {
@@ -11,95 +9,79 @@ export default createStore({
     skills: [],
     projects: [],
     contact: ""
-
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
-    setHome(state , data){
-      state.home = data
+    setHome(state, data) {
+      state.home = data;
     },
-    setAbout(state , about){
-      state.about = about
+    setAbout(state, about) {
+      state.about = about;
     },
-    setResume(state , resume){
-      state.resume = resume
+    setResume(state, resume) {
+      state.resume = resume;
     },
-    setSkills(state , skills){
-      state.skills = skills
+    setSkills(state, skills) {
+      state.skills = skills;
     },
-    setProjects(state , projects ){
-      state.projects = projects
+    setProjects(state, projects) {
+      state.projects = projects;
     },
-    setContact(state , contact){
-      state.contact = contact
+    setContact(state, contact) {
+      state.contact = contact;
     }
   },
   actions: {
-    getHome (context){
+    async getHome(context) {
       try {
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          context.commit('setHome',res.data.home)
-        })
+        const res = await axios.get('https://shakill23.github.io/vueEOMP/data');
+        context.commit('setHome', res.data.home);
       } catch (error) {
-        alert('cannot retrieve data',error)
+        alert('Cannot retrieve data', error);
       }
     },
-    getAbout (context){
+    async getAbout(context) {
       try {
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          context.commit('setAbout',res.data.about)
-        })
+        const res = await axios.get('https://shakill23.github.io/vueEOMP/data');
+        context.commit('setAbout', res.data.about);
       } catch (error) {
-        alert('cannot retrieve data',error)
+        alert('Cannot retrieve data', error);
       }
     },
-    getResume (context){
+    async getResume(context) {
       try {
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          context.commit('setResume',res.data.resume)
-        })
+        const res = await axios.get('https://shakill23.github.io/vueEOMP/data');
+        context.commit('setResume', res.data.resume);
       } catch (error) {
-        alert('cannot retrieve data',error)
+        alert('Cannot retrieve data', error);
       }
     },
-    getSkills (context){
+    async getSkills(context) {
       try {
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          console.log(res.data.skills);
-          context.commit('setSkills',res.data.skills)
-        })      
+        const res = await axios.get('https://shakill23.github.io/vueEOMP/data');
+        context.commit('setSkills', res.data.skills);
       } catch (error) {
-        alert('cannot retrieve data',error)
+        alert('Cannot retrieve data', error);
       }
     },
-    getProjects (context){
-      try {
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          context.commit('setProjects',res.data.projects)
-        })    
-      } catch (error) {
-        alert('cannot retrieve data',error)
+    async getProjects(context) {
+      if (context.state.projects.length === 0) {
+        try {
+          const res = await axios.get('https://shakill23.github.io/vueEOMP/data');
+          context.commit('setProjects', res.data.projects);
+        } catch (error) {
+          alert('Cannot retrieve data', error);
+        }
       }
     },
-    getContact (context){
+    async getContact(context) {
       try {
-        axios.get('https://shakill23.github.io/vueEOMP/data')
-        .then (res => {
-          context.commit('setContact',res.data.contact)
-        })       
+        const res = await axios.get('https://shakill23.github.io/vueEOMP/data');
+        context.commit('setContact', res.data.contact);
       } catch (error) {
-        alert('cannot retrieve data',error)
+        alert('Cannot retrieve data', error);
       }
     }
   },
-  modules: {
-
-  }
-})
-
+  modules: {}
+});

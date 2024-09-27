@@ -1,16 +1,27 @@
 <template>
   <section id="projects" class="container">
-    <div class="row justify-content-center">
-      <h2 id="projectHead">Projects</h2>
+    <!-- Centered h2 Heading -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 id="projectHead">Projects</h2>
+      </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-md-4 mb-4" v-for="project in $store.state.projects" :key="project">
-        <div class="card">
-          <img :src="project.image" class="card-img-top" alt="project image">
+
+    <!-- Projects Grid -->
+    <div class="row justify-content-center mt-4">
+      <div
+        class="col-lg-4 col-md-6 col-sm-12 mb-4"
+        v-for="project in $store.state.projects"
+        :key="project.name"
+      >
+        <div class="card h-100">
+          <img :src="project.image" class="card-img-top" alt="project image" />
           <div class="card-body">
-            <h5 class="card-title">{{project.name}}</h5>
-            <p class="card-text">{{project.description}}</p>
-            <a :href="project.gitHub" class="btn btn-primary" target="_blank">Github</a>
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <a :href="project.gitHub" class="btn btn-primary" target="_blank"
+              >GitHub</a
+            >
           </div>
         </div>
       </div>
@@ -20,114 +31,103 @@
 
 <script>
 export default {
-
-}
+  created() {
+    if (this.$store.state.projects.length === 0) {
+      this.$store.dispatch('getProjects');
+    }
+  },
+};
 </script>
 
 <style scoped>
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Project section heading */
+#projectHead {
+  color: #333;
+  text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3; /* Ensuring it's above the animations */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Work Sans', sans-serif;
-  text-align: center;
-}
-
+/* Projects container */
 #projects {
-  padding: 50px 0;
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 100%;
+  position: relative;
+  z-index: 3; /* Keeping it above animations, level 3 */
 }
 
-#projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.row {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
+/* Card styling */
 .card {
-  background-color: #fff;
-  border: none;
+  background-color: #f4f4f4;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  width: 100%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Ensure cards have the same height */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 3; /* Content level, above animations */
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Image styling */
 .card-img-top {
-  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 200px;
   object-fit: cover;
+  position: relative;
+  z-index: 3; /* Image must remain above animations */
 }
 
-.card-body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-}
-
+/* Text styling */
 .card-title {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .card-text {
+  font-family: 'Work Sans', sans-serif;
   font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
+  color: #555;
 }
 
+/* Button styling */
 .btn-primary {
   background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color 0.3s ease-in-out;
+  border-color: #007bff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-primary:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .card {
-    width: 90%;
+  .card-img-top {
+    height: 150px;
+  }
+
+  #projects {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
   }
 }
-
 </style>
 
