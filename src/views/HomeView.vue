@@ -40,24 +40,21 @@ export default {
     ContactSection,
   },
   mounted() {
-    // Setting up the IntersectionObserver after component is mounted
-    document.addEventListener("DOMContentLoaded", () => {
-      const floatDivs = document.querySelectorAll('.box div');
-      const area2Sections = document.querySelectorAll('#about, #resume, #contact');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            floatDivs.forEach(div => div.style.backgroundColor = 'black');
-          } else {
-            floatDivs.forEach(div => div.style.backgroundColor = '');
-          }
-        });
+    const floatDivs = document.querySelectorAll('.box div');
+    const area2Sections = document.querySelectorAll('#about, #resume, #contact');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          floatDivs.forEach(div => div.style.backgroundColor = 'black');
+        } else {
+          floatDivs.forEach(div => div.style.backgroundColor = '');
+        }
       });
+    });
 
-      area2Sections.forEach(section => {
-        observer.observe(section);
-      });
+    area2Sections.forEach(section => {
+      observer.observe(section);
     });
   }
 }

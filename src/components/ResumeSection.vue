@@ -32,9 +32,7 @@
         </div>
         
           <div data-aos="zoom-out-left" data-aos-delay="50">
-            <p>I did admin work part-time for a company and the tasks I had to was: scanning documents like passports
-              and
-              IDs, booking train and airline tickets, editing and working with Excel spreadsheets.</p>
+            <p>Currently an Intern at LC Studio and doing Cyber Security.</p>
           </div>
         </div>
 

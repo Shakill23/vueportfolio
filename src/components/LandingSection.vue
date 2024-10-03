@@ -6,7 +6,7 @@
           <!-- Profile Picture Column -->
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
             <img id="profilePic" class="img-fluid zoom-in-hover"
-              src="https://shakill23.github.io/allImages/images/sdFormal.jpg" alt="profilePic" loading="lazy">
+              src="https://shakill23.github.io/allImages/images/formalNew-removebg.png" alt="profilePic" loading="eager">
           </div>
           
           <!-- Name and Role Column -->

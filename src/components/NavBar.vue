@@ -22,7 +22,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#resume">
-                <i class="bi bi-file-person"></i> Resume
+                <i class="bi bi-file-person"></i> Education & Experience
               </a>
             </li>
             <li class="nav-item">
