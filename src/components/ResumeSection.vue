@@ -1,181 +1,252 @@
 <template>
-  <section id="resume" class="container-fluid">
+  
+  <section id="resume" class="wrapper container-fluid">
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div> <!-- New div -->
+      <div></div> <!-- New div -->
+      <div></div> <!-- New div -->
+      <div></div> <!-- New div -->
+      <div></div> <!-- New div -->
+    </div>
     <div class="row justify-content-center">
+      
       <h2>Resume</h2>
-      <h3 id="education">Education</h3>
-      <div v-for="resum in $store.state.resume" :key="resum">
-        <div class="row justify-content-center">
-          <div data-aos="fade-right" data-aos-delay="200" class="block col-lg-4 col-md-6 col-sm-12">
-            <p><img src="https://shakill23.github.io/allImages/images/graduation-hat.png" alt="icon">{{ resum.year }}</p>
-            <h4>{{ resum.place }}</h4>
-            <p>{{ resum.description }}</p>
+
+      <!-- Flexbox container for Education and Experience -->
+      <div class="row education-experience-container">
+        <!-- Education Section -->
+        <div class="col-lg-6 col-md-12 col-sm-12 education-section">
+          <h3 id="education">Education</h3>
+          <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
+            <p><i class="bi bi-award"></i>2020 - 2022</p>
+            <h4>Norman Henshilwood High School</h4>
+            <p>I studied Computer Applications and Technology, Physical Science, Pure Mathematics, and Business Studies.</p>
           </div>
-        </div>
-      </div>
-      <h3>Work & Experience</h3>
-      <div class="row justify-content-center">
-        <div class="block col-lg-8 col-md-10 col-sm-12 col-12 zoom-in-hover">
-          <div data-aos="zoom-out-right" data-aos-delay="100">
-            <p><img src="https://shakill23.github.io/allImages/images/administration.png" alt="icon">2020-2024</p>
-            <h4>Administration</h4>
+          <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
+            <p><i class="bi bi-award"></i>Feb 2023 - Sep 2023</p>
+            <h4>HyperionDev</h4>
+            <p>I completed a 6-month online course at HyperionDev, focusing on HTML, CSS, JavaScript, and Bootstrap.</p>
           </div>
-          <div data-aos="zoom-out-left" data-aos-delay="50">
-            <p>I did admin work part-time for a company and the tasks I had to was: scanning documents like passports
-              and
-              IDs, booking train and airline tickets, editing and working with Excel spreadsheets.</p>
-          </div>
-        </div>
-        <div class="block col-lg-8 col-md-10 col-sm-12 col-12 zoom-in-hover">
-        <div data-aos="zoom-out-left" data-aos-delay="100">
-          <p><img src="https://shakill23.github.io/allImages/images/icons8-cyber-security-50.png" alt="icon">2024-Present</p>
-          <h4>LC Studio</h4>
-        </div>
-        
-          <div data-aos="zoom-out-left" data-aos-delay="50">
-            <p>Currently an Intern at LC Studio and doing Cyber Security.</p>
+          <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
+            <p><i class="bi bi-award"></i>2024 - Sep 2024</p>
+            <h4>Life Choices Coding Academy</h4>
+            <p>This bootcamp taught Web Development fundamentals, including coding languages like HTML, CSS, JavaScript, MySQL, and more.</p>
           </div>
         </div>
 
+        <!-- Work & Experience Section -->
+        <div class="col-lg-6 col-md-12 col-sm-12 experience-section">
+          <h3>Work & Experience</h3>
+          <div class="block work-block" data-aos="zoom-out-right" data-aos-delay="100">
+            <p><i class="bi bi-briefcase"></i>2020 - 2024</p>
+            <h4>Administration</h4>
+            <p>I handled admin tasks like scanning documents, booking tickets, and working with Excel spreadsheets.</p>
+          </div>
+          <div class="block work-block" data-aos="zoom-out-left" data-aos-delay="100">
+  <p><i class="bi bi-briefcase"></i>2024 - Present</p>
+  <h4>Intern at LC Studio</h4>
+  <p>Currently, I am interning at LC Studio, where I focus on cyber security. I actively participate in Scrum meetings with my team and tackle real-world projects while continuously upskilling in my spare time.</p>
+</div>
+
+          <!-- Placeholder for additional experience -->
+          <div class="block placeholder-block" data-aos="zoom-out-left" data-aos-delay="100">
+            <h4>Working on it...</h4>
+            <p>More experiences and achievements are coming soon!</p>
+          </div>
+        </div>
       </div>
     </div>
-
   </section>
-
-
 </template>
 
-
 <style scoped>
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 #resume {
   padding: 0;
   background: rgb(224, 209, 209);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Work Sans', sans-serif;
-  text-align: center;
-}
-
-section,
-#resume,
-.container-fluid {
-  background-attachment: white;
-}
-
-#skills {
-  padding: 50px 0;
-  text-align: center;
-  /* Center the heading */
-}
 
 h2,
 h3 {
   margin-bottom: 20px;
   text-align: center;
-  /* Center heading */
 }
 
-.container {
+/* Container for Education and Experience sections */
+.education-experience-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.education-section,
+.experience-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 15px;
-  /* Adjust left and right padding */
-  max-width: 1200px;
-  /* Limit the maximum width for central alignment */
-  margin: 0 auto;
-  /* Center the container */
 }
 
-.row {
-  width: 100%;
+.block {
+  min-height: 250px; /* Set minimum height based on content balance */
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
   display: flex;
-  justify-content: space-evenly;
-  /* Ensure equal spacing between cards */
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
-/* flip card */
-
-#liHead {
-  font-family: 'Work Sans', sans-serif;
-  background-color: #999898;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  margin-top: 2px;
-  padding: 10px;
+.placeholder-block {
+  visibility: hidden; /* Makes the yellow block invisible but keeps its size */
 }
 
-.card-container.skills img {
-  width: 6rem;
-  height: 6rem;
+/* Block hover effect */
+.block:hover {
+  transform: scale(1.01);
 }
 
-.card-container.skills {
-  perspective: 1000px;
+/* Responsive styling */
+@media (max-width: 768px) {
+  .education-experience-container {
+    flex-direction: column;
+  }
+
+  .block {
+    margin-bottom: 20px;
+  }
 }
 
-.card.skills {
-  position: relative;
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
+.box div{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 6px solid rgb(0, 0, 0);
+    z-index: 0;
 }
 
-.card-container.skills:hover .card.skills {
-  transform: rotateY(180deg);
+.box div:nth-child(1){
+    top: 12%;
+    left: 42%;
+    animation: animate 10s linear infinite;
 }
 
-.card.skills .card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+.box div:nth-child(2){
+    top: 70%;
+    left: 50%;
+    animation: animate 7s linear infinite;
 }
 
-.card.skills .front {
-  background-color: #ffffff;
-  color: black;
+.box div:nth-child(3){
+    top: 17%;
+    left: 6%;
+    animation: animate 9s linear infinite;
 }
 
-.card.skills .back {
-  background-color: #ffffff;
-  transform: rotateY(180deg);
+.box div:nth-child(4){
+    top: 20%;
+    left: 60%;
+    animation: animate 10s linear infinite;
 }
 
-.card.skills .back ul {
-  list-style: none;
-  padding: 0;
+.box div:nth-child(5){
+    top: 67%;
+    left: 10%;
+    animation: animate 6s linear infinite;
 }
 
-.card.skills .back ul li {
-  font-family: 'Work Sans', sans-serif;
-  margin-bottom: 6px;
-  text-align: center;
-  font-size: 10px;
-  font-weight: bold;
-  color: black;
-  background-color: #ededed;
-  border-radius: .2rem;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+.box div:nth-child(6){
+    top: 80%;
+    left: 70%;
+    animation: animate 12s linear infinite;
 }
+
+.box div:nth-child(7){
+    top: 60%;
+    left: 80%;
+    animation: animate 15s linear infinite;
+}
+
+.box div:nth-child(8){
+    top: 32%;
+    left: 25%;
+    animation: animate 16s linear infinite;
+}
+
+.box div:nth-child(9){
+    top: 90%;
+    left: 25%;
+    animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(10){
+    top: 20%;
+    left: 80%;
+    animation: animate 5s linear infinite;
+}
+
+/* New Floating Divs Positions */
+.box div:nth-child(11) {
+  top: 10%;
+  right: 5%;
+  animation: animate 8s linear infinite;
+}
+
+/* Closer to right edge */
+.box div:nth-child(12) {
+  bottom: 10%;
+  right: 3%;
+  animation: animate 6s linear infinite;
+}
+
+/* Closer to bottom right edge */
+.box div:nth-child(13) {
+  bottom: 20%;
+  left: 5%;
+  animation: animate 11s linear infinite;
+}
+
+/* Closer to left edge */
+.box div:nth-child(14) {
+  bottom: 30%;
+  right: 10%;
+  animation: animate 9s linear infinite;
+}
+
+/* Slightly closer to right edge */
+.box div:nth-child(15) {
+  top: 25%;
+  left: 2%;
+  animation: animate 13s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.3) translateY(-90px) rotate(360deg);
+        opacity: 0;
+
+    }
+}
+
+
 </style>
+
+

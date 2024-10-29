@@ -1,24 +1,99 @@
 <template>
-  <div class="wrapper container-fluid">
-    <div class="box">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
 
-    <section class="row wrapperBg" id="landing"><LandingSection/></section>
-    <section class="row" id="about"><AboutSection/></section>
-    <section class="row wrapperBg" id="skills"><SkillsSection/></section>
-    <section class="row" id="resume"><ResumeSection/></section>
-    <section class="row wrapperBg" id="project"><ProjectSection/></section>
-    <section class="row" id="contact"><ContactSection/></section>
+  <div class="wrapper container-fluid">
+
+    <section class="row wrapperBg" id="landing">
+
+      <LandingSection />
+
+    </section>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    <section class="row" id="about">
+
+      <AboutSection />
+
+    </section>
+
+    <section class="row wrapperBg" id="skills">
+
+      <SkillsSection />
+
+    </section>
+    <section class="row" id="resume">
+
+      <ResumeSection />
+ 
+    </section>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    <section class="row wrapperBg" id="project">
+
+      <ProjectSection />
+
+    </section>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    <section class="row" id="contact">
+
+      <ContactSection />
+
+    </section>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
   </div>
+  <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 </template>
 
 <script>
@@ -39,27 +114,18 @@ export default {
     ProjectSection,
     ContactSection,
   },
-  mounted() {
-    const floatDivs = document.querySelectorAll('.box div');
-    const area2Sections = document.querySelectorAll('#about, #resume, #contact');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          floatDivs.forEach(div => div.style.backgroundColor = 'black');
-        } else {
-          floatDivs.forEach(div => div.style.backgroundColor = '');
-        }
-      });
-    });
-
-    area2Sections.forEach(section => {
-      observer.observe(section);
-    });
-  }
 }
 </script>
 
 <style scoped>
-/* Add custom styles if needed */
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapperBg {
+  background: linear-gradient(90deg, rgb(16, 2, 2) 0%, rgb(90, 8, 8) 35%, rgb(255, 0, 0));
+}
 </style>
