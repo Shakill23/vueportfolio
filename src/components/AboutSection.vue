@@ -25,7 +25,7 @@
             <div>
               <p class="intro-text">
                 Hello! I'm <strong>Shakeel Davids</strong> – a driven and curious software developer with a deep passion
-                for <span class="highlight">coding</span> and <span class="highlight">automation</span>. I’m always
+                for <span class="highlight">coding</span>. I’m always
                 eager to learn, explore new perspectives, and find ways to simplify and optimize processes to make
                 things easier and more effective.
               </p>
@@ -100,6 +100,8 @@ html {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+
 
 /* Section Title animation underline */
 /* .section-title::after {

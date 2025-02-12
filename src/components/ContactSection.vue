@@ -18,7 +18,7 @@
       <div></div> <!-- New div -->
     </div>
     <div class="row justify-content-center">
-      <h2 id="contactIndex" class="section-title text-center">Contact Me</h2>
+      <h2 id="contactIndex" class="section-title text-center">Contact</h2>
       <div class="card contact-card col-md-8">
         <div class="info text-center">
           <span><i class="bi bi-envelope-at"></i>shakeeldvd23@gmail.com</span>
@@ -88,10 +88,13 @@ a {
 }
 
 .section-title {
-  font-size: 2rem;
-  color: #333;
   margin-bottom: 20px;
   text-align: center;
+  text-transform: uppercase;
+letter-spacing: 1px;
+font-size: 2.8rem;
+  font-weight: 700;
+  color: #333;
 }
 
 .contact-card {
