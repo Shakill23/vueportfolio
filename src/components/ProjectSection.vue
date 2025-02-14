@@ -39,7 +39,7 @@
             <h5 class="card-title">{{ project.name }}</h5>
             <p class="card-text">{{ project.description }}</p>
             <a :href="project.gitHub" class="btn btn-github" target="_blank">GitHub</a>
-            <a :href="project.liveDemo" class="btn btn-live" target="_blank">Live</a>
+            <a :href="project.live" class="btn btn-live" target="_blank">Live</a>
           </div>
         </div>
       </div>

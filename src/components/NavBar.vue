@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand text-black" href="#landing">
-        <img src="https://shakill23.github.io/allImages/images/sdLogo.png" alt="OSAS-Logo" width="35" height="35" class="d-inline-block align-text-center">
+        <img src="https://shakill23.github.io/allImages/images/sdLogo.png" alt="OSAS-Logo" class="logo">
         <span class="brand-name">Digital Portfolio</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +33,10 @@
   transition: background 0.3s ease;
 }
 
-img[alt="icon"] {
-    max-width: 20px !important;
-    max-height: 20px !important;
-    margin: 5px;
+.logo {
+  width: 50px; /* Increased size */
+  height: auto; /* Keeps aspect ratio */
+  max-width: 100%;
 }
 
 .brand-name {
@@ -99,6 +99,7 @@ nav a.active {
   color: #00bfff;
 }
 
+/* Responsive adjustments */
 @media (max-width: 995px) {
   #navbar {
     background: rgba(255, 255, 255, 0.8);
@@ -110,6 +111,16 @@ nav a.active {
 
   .brand-name {
     font-size: 1rem;
+  }
+
+  .logo {
+    width: 45px; /* Slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 40px; /* Adjust for mobile screens */
   }
 }
 </style>

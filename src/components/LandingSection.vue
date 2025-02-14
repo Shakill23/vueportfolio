@@ -40,7 +40,7 @@
 <style scoped>
 /* Main Section */
 #home {
-  padding-top: calc(70px + 10%);
+  padding-top: calc(40px + 10%);
   padding-bottom: 5%;
   text-align: center;
   display: flex;
