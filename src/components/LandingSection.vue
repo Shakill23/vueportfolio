@@ -16,21 +16,29 @@
 
     <!-- Main Section -->
     <section id="home" class="container">
-      <div data-aos="fade-down" data-aos-duration="1500" class="row justify-content-center align-items-center">
+      <div class="row justify-content-center align-items-center">
         <!-- Profile Picture Column -->
-        <div class="col-lg-4 col-md-6 col-sm-12 mb-4 text-center">
+        <div data-aos="fade-right" data-aos-duration="2000" data-aos-offset="0" data-aos-anchor-placement="top-bottom"
+          data-aos-once="false" data-aos-mirror="true" class="col-lg-4 col-md-6 col-sm-12 mb-4 text-center">
           <img id="profilePic" class="img-fluid zoom-in-hover"
-            src="https://shakill23.github.io/allImages/images/formalNew-removebg.png" alt="profilePic" loading="eager">
+            src="https://shakill23.github.io/allImages/images/formalNew-removebg.png" alt="profilePic" loading="lazy">
         </div>
 
         <!-- Name and Role Column -->
         <div class="col-lg-8 col-md-6 col-sm-12 mb-4 text-center text-md-start" id="text">
-          <h2 id="shakeel" class="cool-text" data-text="Shakeel Davids">Shakeel Davids</h2>
-          <h2 class="aspiring">Aspiring Developer</h2>
+          <h2 id="shakeel" data-aos="fade-down" data-aos-duration="2000" data-aos-offset="0"
+            data-aos-anchor-placement="top-bottom" data-aos-once="false" data-aos-mirror="true" class="cool-text"
+            data-text="Shakeel Davids">
+            Shakeel Davids</h2>
+          <h2 class="aspiring" data-aos="fade-left" data-aos-duration="2000" data-aos-offset="0"
+            data-aos-anchor-placement="top-bottom" data-aos-once="false" data-aos-mirror="true">Aspiring Developer
+          </h2>
 
           <!-- Download CV Button -->
           <a href="https://shakill23.github.io/allImages/images/Shakeel Davids CV Resume.pdf" download target="_blank">
-            <button class="download-cv-btn">View CV</button>
+            <button class="download-cv-btn" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0"
+              data-aos-anchor-placement="top-bottom" data-aos-once="false" data-aos-mirror="true">View
+              CV</button>
           </a>
         </div>
       </div>
@@ -128,8 +136,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Below all other content */
-  pointer-events: none; /* Prevent interaction */
+  z-index: 0;
+  /* Below all other content */
+  pointer-events: none;
+  /* Prevent interaction */
   overflow: hidden;
 }
 
@@ -143,16 +153,65 @@
 }
 
 /* Position each box randomly */
-.box div:nth-child(1) { top: 10%; left: 20%; animation-duration: 8s; }
-.box div:nth-child(2) { top: 30%; left: 40%; animation-duration: 10s; }
-.box div:nth-child(3) { top: 60%; left: 10%; animation-duration: 12s; }
-.box div:nth-child(4) { top: 70%; left: 80%; animation-duration: 6s; }
-.box div:nth-child(5) { top: 50%; left: 50%; animation-duration: 9s; }
-.box div:nth-child(6) { top: 20%; left: 70%; animation-duration: 7s; }
-.box div:nth-child(7) { top: 80%; left: 30%; animation-duration: 11s; }
-.box div:nth-child(8) { top: 90%; left: 90%; animation-duration: 5s; }
-.box div:nth-child(9) { top: 15%; left: 60%; animation-duration: 13s; }
-.box div:nth-child(10) { top: 40%; left: 10%; animation-duration: 8s; }
+.box div:nth-child(1) {
+  top: 10%;
+  left: 20%;
+  animation-duration: 8s;
+}
+
+.box div:nth-child(2) {
+  top: 30%;
+  left: 40%;
+  animation-duration: 10s;
+}
+
+.box div:nth-child(3) {
+  top: 60%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.box div:nth-child(4) {
+  top: 70%;
+  left: 80%;
+  animation-duration: 6s;
+}
+
+.box div:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  animation-duration: 9s;
+}
+
+.box div:nth-child(6) {
+  top: 20%;
+  left: 70%;
+  animation-duration: 7s;
+}
+
+.box div:nth-child(7) {
+  top: 80%;
+  left: 30%;
+  animation-duration: 11s;
+}
+
+.box div:nth-child(8) {
+  top: 90%;
+  left: 90%;
+  animation-duration: 5s;
+}
+
+.box div:nth-child(9) {
+  top: 15%;
+  left: 60%;
+  animation-duration: 13s;
+}
+
+.box div:nth-child(10) {
+  top: 40%;
+  left: 10%;
+  animation-duration: 8s;
+}
 
 /* Floating Animation */
 @keyframes animate {
@@ -160,6 +219,7 @@
     transform: scale(0) translateY(0) rotate(0);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.3) translateY(-90px) rotate(360deg);
     opacity: 0;

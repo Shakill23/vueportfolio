@@ -12,21 +12,21 @@
       <div></div>
       <div></div>
       <div></div>
-      <div></div> <!-- New div -->
-      <div></div> <!-- New div -->
-      <div></div> <!-- New div -->
-      <div></div> <!-- New div -->
-      <div></div> <!-- New div -->
+      <div></div> 
+      <div></div> 
+      <div></div> 
+      <div></div> 
+      <div></div> 
     </div>
     <div class="row justify-content-center">
       
-      <h2>Resume</h2>
+      <h2 data-aos="fade-down" data-aos-duration="1000" id="resumeHead">Resume</h2>
 
       <!-- Flexbox container for Education and Experience -->
       <div class="row education-experience-container">
         <!-- Education Section -->
         <div class="col-lg-6 col-md-12 col-sm-12 education-section">
-          <h3 id="education">Education</h3>
+          <h3 id="education" data-aos="fade-down" data-aos-duration="1000">Education</h3>
           <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
             <p><i class="bi bi-award"></i>2020 - 2022</p>
             <h4>Norman Henshilwood High School</h4>
@@ -46,20 +46,20 @@
 
         <!-- Work & Experience Section -->
         <div class="col-lg-6 col-md-12 col-sm-12 experience-section">
-          <h3>Work & Experience</h3>
-          <div class="block work-block" data-aos="zoom-out-right" data-aos-delay="100">
+          <h3 data-aos="fade-down" data-aos-duration="1000">Work & Experience</h3>
+          <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
             <p><i class="bi bi-briefcase"></i>2020 - 2024</p>
             <h4>Administration</h4>
             <p>I handled admin tasks like scanning documents, booking tickets, and working with Excel spreadsheets.</p>
           </div>
-          <div class="block work-block" data-aos="zoom-out-left" data-aos-delay="100">
+          <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
   <p><i class="bi bi-briefcase"></i>2024 - Present</p>
   <h4>Intern at LC Studio</h4>
   <p>Currently, I am interning at LC Studio, where I focus on cyber security. I actively participate in Scrum meetings with my team and tackle real-world projects while continuously upskilling in my spare time.</p>
 </div>
 
           <!-- Placeholder for additional experience -->
-          <div class="block placeholder-block" data-aos="zoom-out-left" data-aos-delay="100">
+          <div class="block placeholder-block" data-aos="fade-left" data-aos-delay="200">
             <h4>Working on it...</h4>
             <p>More experiences and achievements are coming soon!</p>
           </div>
@@ -76,9 +76,15 @@
 }
 
 
-h2,
 h3 {
   margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  padding-top: 55px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -103,7 +109,7 @@ h3 {
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease;
+  /* transition: transform 0.2s ease; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

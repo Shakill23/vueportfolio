@@ -5,8 +5,12 @@ import router from './router'
 import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
-import AOS from 'aos';
 import 'aos/dist/aos.css';  
+import AOS from 'aos';
 
 createApp(App).use(store).use(router).mount('#app')
-AOS.init();
+AOS.init({
+  mirror: true,
+  once: false,
+  duration: 1000,
+});
