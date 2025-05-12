@@ -20,7 +20,7 @@
     </div>
     <section id="skills" class="container">
       <div class="col-lg-8 col-md-10 col-sm-12 col-12">
-        <h2 id="skillsHead">Skills</h2>
+        <h2 id="skillsHead" data-aos="fade-right" data-aos-duration="1000">Skills</h2>
         <div class="container mt-5">
           <div class="row justify-content-center">
             <!-- First Skill Card with Peek Feature -->

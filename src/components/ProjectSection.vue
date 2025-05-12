@@ -8,7 +8,7 @@
     <!-- Centered h2 Heading -->
     <div class="row">
       <div class="col-12 text-center">
-        <h2 id="projectHead">Projects</h2>
+        <h2 id="projectHead" data-aos="fade-left" data-aos-duration="1000">Projects</h2>
       </div>
     </div>
 
