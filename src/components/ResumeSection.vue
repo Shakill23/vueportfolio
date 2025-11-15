@@ -22,49 +22,48 @@
       
       <h2 data-aos="fade-down" data-aos-duration="1000" id="resumeHead">Resume</h2>
 
-      <!-- Flexbox container for Education and Experience -->
-      <div class="row education-experience-container">
-        <!-- Education Section -->
-        <div class="col-lg-6 col-md-12 col-sm-12 education-section">
-          <h3 id="education" data-aos="fade-down" data-aos-duration="1000">Education</h3>
-          <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
-            <p><i class="bi bi-award"></i>2020 - 2022</p>
-            <h4>Norman Henshilwood High School</h4>
-            <p>I studied Computer Applications and Technology, Physical Science, Pure Mathematics, and Business Studies.</p>
-          </div>
-          <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
-            <p><i class="bi bi-award"></i>Feb 2023 - Sep 2023</p>
-            <h4>HyperionDev</h4>
-            <p>I completed a 6-month online course at HyperionDev, focusing on HTML, CSS, JavaScript, and Bootstrap.</p>
-          </div>
-          <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
-            <p><i class="bi bi-award"></i>2024 - Sep 2024</p>
-            <h4>Life Choices Coding Academy</h4>
-            <p>This bootcamp taught Web Development fundamentals, including coding languages like HTML, CSS, JavaScript, MySQL, and more.</p>
-          </div>
-        </div>
+     <!-- Flexbox container for Education and Experience -->
+<div class="row education-experience-container">
+  <!-- Education Section -->
+  <div class="col-lg-6 col-md-12 col-sm-12 education-section">
+    <h3 id="education" data-aos="fade-down" data-aos-duration="1000">Education</h3>
+    <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
+      <p><i class="bi bi-award"></i>2020 - 2022</p>
+      <h4 class="resume-h4">Norman Henshilwood High School</h4>
+      <p>Studied Computer Applications and Technology, Physical Science, Pure Mathematics, and Business Studies.</p>
+    </div>
+    <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
+      <p><i class="bi bi-award"></i>Mar 2023 - Sep 2023</p>
+      <h4 class="resume-h4">HyperionDev</h4>
+      <p>Completed a 6-month online coding course, gaining experience with remote work, virtual collaboration, and online meetings with classmates and mentors.</p>
+    </div>
+    <div class="block education-block" data-aos="fade-right" data-aos-delay="200">
+      <p><i class="bi bi-award"></i>Mar 2024 - Sep 2024</p>
+      <h4 class="resume-h4">Life Choices Academy</h4>
+      <p>This intensive bootcamp taught me web development fundamentals and teamwork, while helping me discover my ability to excel under pressure. There's nothing more stressful than code breaking minutes before submission deadlines.</p>
+    </div>
+  </div>
 
-        <!-- Work & Experience Section -->
-        <div class="col-lg-6 col-md-12 col-sm-12 experience-section">
-          <h3 data-aos="fade-down" data-aos-duration="1000">Work & Experience</h3>
-          <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
-            <p><i class="bi bi-briefcase"></i>2020 - 2024</p>
-            <h4>Administration</h4>
-            <p>I handled admin tasks like scanning documents, booking tickets, and working with Excel spreadsheets.</p>
-          </div>
-          <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
-  <p><i class="bi bi-briefcase"></i>2024 - Present</p>
-  <h4>Intern at LC Studio</h4>
-  <p>Currently, I am interning at LC Studio, where I focus on cyber security. I actively participate in Scrum meetings with my team and tackle real-world projects while continuously upskilling in my spare time.</p>
+  <!-- Work & Experience Section -->
+  <div class="col-lg-6 col-md-12 col-sm-12 experience-section">
+    <h3 data-aos="fade-down" data-aos-duration="1000">Work & Experience</h3>
+    <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
+      <p><i class="bi bi-briefcase"></i>2021 - 2022</p>
+      <h4 class="resume-h4">New Age SA Travel & Tours</h4>
+      <p>Handled administrative tasks including document scanning, ticket booking, and working with Excel spreadsheets and Word documents.</p>
+    </div>
+    <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
+      <p><i class="bi bi-briefcase"></i>2024 - Aug 2025</p>
+      <h4 class="resume-h4">LC Studio</h4>
+      <p>As an intern, I actively participated in Scrum meetings, collaborated in team environments, and tackled real-world projects while continuously upskilling in my spare time. This experience taught me that there's more to being a developer than just coding.</p>
+    </div>
+    <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
+      <p><i class="bi bi-briefcase"></i>Sep 2025 - Present</p>
+      <h4 class="resume-h4">Teleperformance</h4>
+      <p>I thought my foundation of patience and problem-solving was solid, but being a Customer Service Agent helped me push beyond those limits. I look forward to applying this enhanced experience in a coding environment.</p>
+    </div>
+  </div>
 </div>
-
-          <!-- Placeholder for additional experience -->
-          <div class="block placeholder-block" data-aos="fade-left" data-aos-delay="200">
-            <h4>Working on it...</h4>
-            <p>More experiences and achievements are coming soon!</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 </template>
@@ -74,7 +73,6 @@
   padding: 0;
   background: rgb(224, 209, 209);
 }
-
 
 h3 {
   margin-bottom: 20px;
@@ -103,26 +101,62 @@ h2 {
 }
 
 .block {
-  min-height: 250px; /* Set minimum height based on content balance */
+  min-height: 250px; 
   margin-bottom: 30px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-  /* transition: transform 0.2s ease; */
+  transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer; 
 }
 
+/* H4 with hover effect - fixed to text width */
+.resume-h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: fit-content; 
+}
 
-.placeholder-block {
-  visibility: hidden; /* Makes the yellow block invisible but keeps its size */
+.resume-h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; 
+  height: 3px;
+  background: #ff4757;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Trigger underline when hovering over the entire block */
+.block:hover .resume-h4::after {
+  width: 100%; 
+}
+
+.block:hover .resume-h4 {
+  color: #2d3748;
 }
 
 /* Block hover effect */
 .block:hover {
   transform: scale(1.01);
+}
+
+.placeholder-block {
+  visibility: hidden; 
 }
 
 /* Responsive styling */
@@ -133,6 +167,16 @@ h2 {
 
   .block {
     margin-bottom: 20px;
+  }
+  
+  .resume-h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-h4 {
+    font-size: 1.2rem;
   }
 }
 
@@ -251,8 +295,4 @@ h2 {
 
     }
 }
-
-
 </style>
-
-

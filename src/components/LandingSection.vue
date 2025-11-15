@@ -35,7 +35,7 @@
           </h2>
 
           <!-- Download CV Button -->
-          <a href="https://shakill23.github.io/allImages/images/Shakeel Davids CV Resume.pdf" download target="_blank">
+          <a href="https://shakill23.github.io/allImages/images/Shakeel Davids CV.pdf" download target="_blank">
             <button class="download-cv-btn" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0"
               data-aos-anchor-placement="top-bottom" data-aos-once="false" data-aos-mirror="true">View
               CV</button>

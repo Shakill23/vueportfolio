@@ -30,9 +30,7 @@
             ref="scrollContent"
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-bs-spy="scroll"
-            data-bs-target="#internalScrollspy"
-            data-bs-offset="60"
+            @scroll="handleScroll"
           >
             <!-- Internal Navigation -->
             <nav id="internalScrollspy" class="internal-nav navbar navbar-expand-lg">
@@ -50,53 +48,41 @@
               </button>
 
               <div class="collapse navbar-collapse" :class="{ show: isInternalMenuOpen }">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="#intro" @click="closeInternalMenu">Intro</a>
+                    <a class="nav-link" :class="{ active: activeSection === 'approach' }" href="#approach" @click="closeInternalMenu">Approach</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#journey" @click="closeInternalMenu">My Journey</a>
+                    <a class="nav-link" :class="{ active: activeSection === 'strengths' }" href="#strengths" @click="closeInternalMenu">Strengths</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#conclusion" @click="closeInternalMenu">Conclusion</a>
+                    <a class="nav-link" :class="{ active: activeSection === 'mindset' }" href="#mindset" @click="closeInternalMenu">Mindset</a>
                   </li>
                 </ul>
               </div>
             </nav>
 
-           <!-- Scrollable Sections -->
-<section id="intro" class="scroll-section">
-  <h4>Intro</h4>
-  <p class="intro-text">
-    Hello! I'm <strong>Shakeel Davids</strong> – a passionate and inventive software developer who loves a good challenge. 
-    Whether I'm strategizing like a chess master or brainstorming innovative ideas, I thrive on thinking several steps ahead and adapting to any situation. 
-    I'm equally comfortable working independently or as part of a collaborative team, and I'm always eager to explore new perspectives.
-  </p>
-</section>
+            <!-- Updated Scrollable Sections -->
+            <section id="approach" class="scroll-section" ref="approachSection">
+              <h4>Approach</h4>
+              <p class="intro-text">
+                I'm a young developer, eager to prove myself in a coding environment. I have experience working both solo and in teams to deliver projects on deadline, and I handle the pressure that comes with it well.
+              </p>
+            </section>
 
-<section id="journey" class="scroll-section">
-  <h4>My Journey</h4>
-  <p>
-    My journey in tech has been as dynamic as a strategic game—every challenge is an opportunity to innovate. I specialize in building efficient, responsive, and user-centered applications using a diverse toolkit including 
-    <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, <span class="highlight">JavaScript</span>, <span class="highlight">Node.js</span>, <span class="highlight">MySQL</span>, and <span class="highlight">Vue.js</span>. My hands-on training at 
-    <strong>Life Choices Academy</strong> not only sharpened my technical skills but also instilled in me a passion for creative problem-solving.
-  </p>
-  <p>
-    I am equally adept at both frontend design and backend development. Whether it's crafting a visually engaging interface or architecting robust server-side solutions, I thrive on merging creativity with technical precision. My experience spans remote collaboration through tools like Google Meet as well as onsite teamwork, proving my ability to adapt and deliver in any setting.
-  </p>
-  <p>
-    Currently, as an intern at <strong>Life Choices Studios</strong>, I’m expanding my full-stack expertise. I’m self-learning <span class="highlight">Python</span> and <span class="highlight">React.js</span> while also pursuing my passion for game development and backend programming. I’m not afraid of new challenges—if there’s a gap in my knowledge, I commit to bridging it, ensuring I can work with any technology to create impactful solutions.
-  </p>
-</section>
+            <section id="strengths" class="scroll-section" ref="strengthsSection">
+              <h4>Strengths</h4>
+              <p>
+                I have a perfectionist's eye for detail, which means I'm naturally good at spotting areas for improvement. Though ironically I'm not perfect myself. But I've learned to use this focus to refine my work and help elevate the work of those around me.
+              </p>
+            </section>
 
-
-<section id="conclusion" class="scroll-section" style="padding-bottom: 100px">
-  <h4>Conclusion</h4>
-  <p class="closing-text">
-    I'm excited to continue growing as a developer, embracing new challenges, and bringing creative solutions to the table. 
-    Whether I'm working solo or with a team, I look forward to making a real impact and driving innovation in every project.
-  </p>
-</section>
+            <section id="mindset" class="scroll-section" ref="mindsetSection">
+              <h4>Mindset</h4>
+              <p class="closing-text mindset-paragraph">
+                If you're looking for the "perfect" candidate who never makes a mistake, you might be looking for a long time. But if you're looking for someone who actively seeks feedback, learns from missteps, and is committed to constant growth, then I am that person.
+              </p>
+            </section>
 
           </div>
         </div>
@@ -110,6 +96,8 @@ export default {
   data() {
     return {
       isInternalMenuOpen: false,
+      activeSection: 'approach',
+      sections: ['approach', 'strengths', 'mindset']
     };
   },
   methods: {
@@ -134,16 +122,74 @@ export default {
       }
       this.closeInternalMenu();
     },
+    handleScroll() {
+      const scrollPosition = this.$refs.scrollContent.scrollTop + 100; // Offset for navbar
+      const scrollHeight = this.$refs.scrollContent.scrollHeight;
+      const clientHeight = this.$refs.scrollContent.clientHeight;
+
+      // Check if we're at the bottom (for mindset section)
+      if (scrollPosition + clientHeight >= scrollHeight - 50) {
+        this.activeSection = 'mindset';
+        return;
+      }
+
+      // Find which section is currently in view
+      for (let i = this.sections.length - 1; i >= 0; i--) {
+        const section = this.sections[i];
+        const element = this.$refs[`${section}Section`];
+        if (element && element.offsetTop <= scrollPosition) {
+          this.activeSection = section;
+          break;
+        }
+      }
+    },
+    setupScrollObserver() {
+      const options = {
+        root: this.$refs.scrollContent,
+        rootMargin: '-40% 0px -40% 0px', 
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.activeSection = entry.target.id;
+          }
+        });
+      }, options);
+
+      // Observe all sections
+      this.sections.forEach(section => {
+        const element = this.$refs[`${section}Section`];
+        if (element) {
+          observer.observe(element);
+        }
+      });
+
+      this.observer = observer;
+    }
   },
   mounted() {
     document.querySelectorAll('.internal-nav .nav-link').forEach((link) => {
       link.addEventListener('click', this.handleInternalNavClick);
     });
+    
+    // Set up scroll detection
+    this.setupScrollObserver();
+    
+    // Also listen to scroll events as backup
+    this.$refs.scrollContent.addEventListener('scroll', this.handleScroll);
   },
   beforeUnmount() {
     document.querySelectorAll('.internal-nav .nav-link').forEach((link) => {
       link.removeEventListener('click', this.handleInternalNavClick);
     });
+    
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+    
+    this.$refs.scrollContent.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
@@ -197,16 +243,17 @@ html {
 .content-card {
   background-color: #fff;
   border-radius: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); */
   padding: 0;
   overflow: hidden;
 }
 
 /* Scrollspy Content */
 .scrollspy-content {
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 /* Internal Navigation */
@@ -219,12 +266,18 @@ html {
   background: rgba(231, 231, 231, 0.9);
   backdrop-filter: blur(10px);
   padding: 10px 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .internal-nav .navbar-collapse {
-  flex-grow: 0;
-  max-height: none; /* Ensures no default bootstrap limiting */
+  flex-grow: 1;
+}
+
+.internal-nav .navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-direction: row;
 }
 
 /* Remove default focus outline on hamburger */
@@ -306,7 +359,7 @@ html {
 .internal-nav .nav-link {
   font-weight: bold;
   color: #000;
-  padding: 10px;
+  padding: 10px 20px;
   transition: color 0.3s ease, transform 0.3s ease;
   position: relative;
   text-decoration: none !important;
@@ -340,19 +393,22 @@ html {
 /* Enhanced Scroll Sections */
 .scroll-section {
   scroll-margin-top: 60px;
-  padding: 30px 40px;
+  padding: 25px 30px;
   text-align: left;
   background: rgba(255, 255, 255, 0.95);
-  margin: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px 15px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+  cursor: pointer; /* Show it's interactive */
 }
 
+/* Commented out hover effects */
+/*
 .scroll-section:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
+*/
 
 .scroll-section h4 {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -363,6 +419,9 @@ html {
   letter-spacing: -0.5px;
   position: relative;
   padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: fit-content; 
 }
 
 .scroll-section h4::after {
@@ -370,10 +429,20 @@ html {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 50px;
+  width: 0;
   height: 3px;
   background: #ff4757;
   border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Trigger underline when hovering over the entire scroll-section */
+.scroll-section:hover h4::after {
+  width: 100%; 
+}
+
+.scroll-section:hover h4 {
+  color: #2d3748;
 }
 
 /* Enhanced Text Styles */
@@ -381,8 +450,8 @@ p {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.1rem;
   color: #4a5568;
-  line-height: 1.8;
-  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
   font-weight: 400;
 }
 
@@ -397,9 +466,14 @@ p {
   font-size: 1.1rem;
   font-style: italic;
   color: #718096;
-  margin-top: 30px;
-  border-left: 3px solid #ff4757;
+  margin-top: 20px;
   padding-left: 1.5rem;
+  border-left: 3px solid #ff4757;
+  position: relative; 
+}
+
+.scroll-section:hover .mindset-paragraph::after {
+  width: 100%;
 }
 
 .highlight {
@@ -481,7 +555,7 @@ p {
     right: 0;
     background: rgba(231, 231, 231, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease;
@@ -498,6 +572,7 @@ p {
     flex-direction: column;
     padding: 15px;
     gap: 0.5rem;
+    justify-content: flex-start;
   }
 
   .internal-nav .nav-item {
@@ -510,6 +585,7 @@ p {
     opacity: 0;
     transform: translateY(-5px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 10px;
   }
 
   .internal-nav .navbar-collapse.show .nav-link {
@@ -520,8 +596,8 @@ p {
 
   /* Scroll Sections adjustments */
   .scroll-section {
-    padding: 25px;
-    margin: 15px 10px;
+    padding: 20px;
+    margin: 10px 8px;
   }
 
   .scroll-section h4 {
@@ -530,7 +606,7 @@ p {
 
   p {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 
   .intro-text {
@@ -545,8 +621,8 @@ p {
   .section-title {
     font-size: 2.4rem;
   }
-  .content-card section {
-    padding: 15px;
+  .scrollspy-content {
+    max-height: 350px;
   }
 }
 
@@ -562,10 +638,14 @@ p {
     height: 20px;
   }
   .scroll-section {
-    padding: 20px 15px;
+    padding: 15px;
+    margin: 8px 5px;
   }
   .scroll-section h4 {
     font-size: 1.4rem;
+  }
+  .scrollspy-content {
+    max-height: 300px;
   }
 }
 </style>
