@@ -2,17 +2,17 @@
 
     <NavBar />
       <router-view />
-    <Footer />
+    <FooterSection />
  
 </template>
 <script>
 import NavBar from '@/components/NavBar.vue'
-import Footer from '@/components/Footer.vue'
+import FooterSection from '@/components/FooterSection.vue';
 
 export default {
   components: {
     NavBar,
-    Footer
+    FooterSection
   },
 computed:{
     getHome(){

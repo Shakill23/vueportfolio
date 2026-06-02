@@ -58,7 +58,7 @@
       <p>As an intern, I actively participated in Scrum meetings, collaborated in team environments, and tackled real-world projects while continuously upskilling in my spare time. This experience taught me that there's more to being a developer than just coding.</p>
     </div>
     <div class="block work-block" data-aos="fade-left" data-aos-delay="200">
-      <p><i class="bi bi-briefcase"></i>Sep 2025 - Present</p>
+      <p><i class="bi bi-briefcase"></i>Sep 2025 - April 2026</p>
       <h4 class="resume-h4">Teleperformance</h4>
       <p>I thought my foundation of patience and problem-solving was solid, but being a Customer Service Agent helped me push beyond those limits. I look forward to applying this enhanced experience in a coding environment.</p>
     </div>
